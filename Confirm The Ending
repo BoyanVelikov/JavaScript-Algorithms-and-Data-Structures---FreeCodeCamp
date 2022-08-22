@@ -1,0 +1,8 @@
+function confirmEnding(str, target) {
+    let targetLength = target.length;
+    if (str.substr(-targetLength, targetLength) == target) {
+        return true;
+    } else {
+        return false;
+    }
+}
