@@ -1,0 +1,14 @@
+function largestOfFour(arr) {
+    let newArr = [];
+    let largestNumber = -Infinity;
+    for (let each of arr) {
+        for (let i = 0; i < each.length; i++) {
+            if (each[i] > largestNumber) {
+                largestNumber = each[i];
+            }
+        }
+        newArr.push(largestNumber);
+        largestNumber = -Infinity;
+    }
+    return newArr;
+}
