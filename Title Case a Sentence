@@ -1,0 +1,12 @@
+function titleCase(str) {
+    let newArr = str.split(' ');
+    let secondArr = [];
+    for (let each of newArr) {
+        let newWord = each[0].toUpperCase();
+        for (let i = 1; i < each.length; i++) {
+            newWord += each[i].toLowerCase();
+        }
+        secondArr.push(newWord);
+    }
+    return secondArr.join(' ');
+}
