@@ -1,0 +1,10 @@
+function bouncer(arr) {
+    let newArr = [];
+    for (let each of arr) {
+        if (!!each !== false) {
+            newArr.push(each);
+        }
+    }
+    arr = newArr;
+    return arr;
+}
