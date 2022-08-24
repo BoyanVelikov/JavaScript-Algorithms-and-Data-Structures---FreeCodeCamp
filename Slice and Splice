@@ -1,0 +1,14 @@
+function frankenSplice(arr1, arr2, n) {
+    let newArr = arr1.slice(0);
+    let result = [];
+    for (let each of arr2.slice(0, n)) {
+        result.push(each);
+    }
+    for (let each of newArr) {
+        result.push(each);
+    }
+    for (let each of arr2.slice(n)) {
+        result.push(each);
+    }
+    return result;
+}
