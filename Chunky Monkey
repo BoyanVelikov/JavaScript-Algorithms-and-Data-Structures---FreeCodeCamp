@@ -1,0 +1,22 @@
+function chunkArrayInGroups(arr, size) {
+  let resultArr = [];
+  let middleArr = [];
+  for (let i = size; i <= arr.length; i = i + size) {
+    console.log(arr[i]);
+    for (let j = i - size; j < i; j++) {
+      middleArr.push(arr[j]);
+    }
+
+    resultArr.push(middleArr);
+    middleArr = [];
+  }
+  if (arr.length % size == 0) {
+    return resultArr;
+  } else {
+    for (let k = arr.length - arr.length % size; k <= arr.length - 1; k++) {
+      middleArr.push(arr[k]);
+    }
+    resultArr.push(middleArr);
+    return resultArr;
+  }
+}
