@@ -1,0 +1,19 @@
+function mutation(arr) {
+  let newArr = [];
+  let secondArr = [];
+
+  for (let i = 0; i < arr[1].length; i++) {
+    newArr.push(arr[1][i].toLowerCase());
+  }
+
+  for (let i = 0; i < arr[0].length; i++) {
+    secondArr.push(arr[0][i].toLowerCase());
+  }
+
+  for (let each of newArr) {
+    if (!secondArr.includes(each)) {
+      return false;
+    }
+  }
+  return true;
+}
