@@ -1,0 +1,12 @@
+function diffArray(arr1, arr2) {
+    let newArr = [];
+    let concArr = arr1.concat([...arr2]);
+
+    for (let i = 0; i < concArr.length; i++) {
+        let mArr = concArr.filter(x => x == concArr[i]);
+        if (mArr.length == 1) {
+            newArr.push(mArr[0]);
+        }
+    }
+    return newArr;
+}
