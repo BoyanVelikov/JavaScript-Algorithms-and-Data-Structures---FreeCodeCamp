@@ -1,0 +1,11 @@
+function sumAll(arr) {
+    let resultArr = arr.sort((a, b) => (a - b));
+    let a = resultArr[0];
+    let b = resultArr[1];
+    let sum = a;
+    while (a < b) {
+        sum = sum + a + 1;
+        a++;
+    }
+    return sum;
+}
