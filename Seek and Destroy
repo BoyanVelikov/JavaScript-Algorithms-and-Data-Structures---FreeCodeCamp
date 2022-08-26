@@ -1,0 +1,20 @@
+function destroyer(arr) {
+    const toRemove = Object.values(arguments).slice(1);
+    let resultArr = [];
+
+    for (let i = 0; i < arr.length; i++) {
+        let removeElement = false;
+
+        for (let j = 0; j < toRemove.length; j++) {
+            if (arr[i] == toRemove[j]) {
+                removeElement = true;
+            }
+        }
+        if (!removeElement) {
+            resultArr.push(arr[i]);
+        }
+    }
+
+
+    return resultArr;
+}
