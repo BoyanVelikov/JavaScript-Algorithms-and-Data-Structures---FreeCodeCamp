@@ -1,0 +1,11 @@
+function translatePigLatin(str) {
+    let consonantRegex = /^[^aeiou]+/;
+
+    let myCon = str.match(consonantRegex);
+
+    return myCon !== null ? str
+        .replace(consonantRegex, '')
+        .concat(myCon)
+        .concat('ay') :
+        str.concat('way');
+}
