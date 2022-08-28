@@ -1,0 +1,15 @@
+function fearNotLetter(str) {
+  let strArr = str.split('');
+  let initIndex = strArr[0].charCodeAt();
+  let finalIndex = str[str.length - 1].charCodeAt();
+  let prevIndex = initIndex;
+
+  for (let i = 1; i < strArr.length; i++) {
+    if (strArr[i].charCodeAt() !== prevIndex + 1) {
+      return String.fromCharCode(strArr[i].charCodeAt() - 1);
+    } else {
+      prevIndex++;
+    }
+  }
+  return undefined;
+}
