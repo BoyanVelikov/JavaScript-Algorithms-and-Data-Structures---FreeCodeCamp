@@ -1,0 +1,27 @@
+function myReplace(str, before, after) {
+  let resultArr = [];
+  let afterNewLast;
+  let midArr = str.split(' ');
+  for (let each of midArr) {
+    if (each == before) {
+      if (each[0] == each[0].toUpperCase()) {
+        let afterNew = after.split('');
+        afterNew[0] = afterNew[0].toUpperCase();
+        afterNewLast = afterNew.join('');
+        resultArr.push(afterNewLast);
+      } else if (each[0] == each[0].toLowerCase()) {
+        let afterNew = after.split('');
+        afterNew[0] = afterNew[0].toLowerCase();
+        afterNewLast = afterNew.join('');
+        resultArr.push(afterNewLast);
+      } else {
+        resultArr.push(after);
+      }
+
+    } else {
+      resultArr.push(each);
+    }
+  }
+
+  return resultArr.join(' ');
+}
