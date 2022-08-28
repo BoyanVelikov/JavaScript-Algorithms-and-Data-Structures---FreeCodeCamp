@@ -1,0 +1,27 @@
+function pairElement(str) {
+  let resultArr = [];
+  let strArr = str.split('');
+
+  for (let each of strArr) {
+    let midResArr = [];
+    if (each == 'A') {
+      midResArr.push(each);
+      midResArr.push('T');
+      resultArr.push(midResArr);
+    } else if (each == 'T') {
+      midResArr.push(each);
+      midResArr.push('A');
+      resultArr.push(midResArr);
+    } else if (each == 'C') {
+      midResArr.push(each);
+      midResArr.push('G');
+      resultArr.push(midResArr);
+    } else if (each == 'G') {
+      midResArr.push(each);
+      midResArr.push('C');
+      resultArr.push(midResArr);
+    }
+  }
+
+  return resultArr;
+}
