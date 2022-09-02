@@ -1,0 +1,13 @@
+function uniteUnique(...arr) {
+    let resultArr = [];
+
+    for (let each of arr) {
+        for (let i = 0; i < each.length; i++) {
+            if (!resultArr.includes(each[i])) {
+                resultArr.push(each[i]);
+            }
+        }
+    }
+
+    return resultArr;
+}
