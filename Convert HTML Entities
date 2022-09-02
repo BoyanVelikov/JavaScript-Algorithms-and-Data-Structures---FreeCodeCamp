@@ -1,0 +1,24 @@
+function convertHTML(str) {
+    let resultStr = [];
+    let midStr = str.split('');
+
+    for (let each of midStr) {
+        if (each.charCodeAt() == 32 || each.charCodeAt() > 64 && each.charCodeAt() < 91 || each.charCodeAt() > 96 && each.charCodeAt() < 123) {
+            resultStr.push(each);
+        } else {
+            if (each.charCodeAt() == 38) {
+                resultStr.push('&amp;');
+            } else if (each.charCodeAt() == 60) {
+                resultStr.push('&lt;');
+            } else if (each.charCodeAt() == 62) {
+                resultStr.push('&gt;');
+            } else if (each.charCodeAt() == 39) {
+                resultStr.push('&apos;');
+            } else if (each.charCodeAt() == 34) {
+                resultStr.push('&quot;');
+            }
+        }
+    }
+
+    return resultStr.join('');
+}
