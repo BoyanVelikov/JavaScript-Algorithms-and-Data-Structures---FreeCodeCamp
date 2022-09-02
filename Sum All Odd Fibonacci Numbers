@@ -1,0 +1,30 @@
+let oddFibArr = [];
+let fibArr = [1, 1];
+if (num == 1) {
+    sum = 1;
+} else if (num == 2) {
+    sum = 2;
+} else {
+    let finalNum = 0;
+    while (finalNum <= num) {
+        let nextNum = fibArr[fibArr.length - 2] + fibArr[fibArr.length - 1];
+        if (nextNum <= num) {
+            fibArr.push(nextNum);
+            finalNum++;
+        } else {
+            break;
+        }
+
+    }
+
+    for (let each of fibArr) {
+        if (each % 2 !== 0) {
+            oddFibArr.push(each);
+        }
+
+    }
+
+    sum = oddFibArr.reduce((acc, red) => acc + red, 0);
+}
+return sum;
+}
