@@ -1,0 +1,23 @@
+function smallestCommons(arr) {
+
+    let commonMultiple = 1;
+    let isComMult = false;
+    let sortedArr = arr.sort((a, b) => a - b);
+    let midNum = sortedArr[0] + 1;
+    while (midNum < sortedArr[1]) {
+        sortedArr.push(midNum);
+        midNum++;
+    }
+    sortedArr.sort();
+
+    while (!isComMult) {
+        isComMult = sortedArr.every(x => commonMultiple % x == 0);
+        if (isComMult) {
+            return commonMultiple;
+        } else {
+            commonMultiple++;
+        }
+    }
+  
+    return sortedArr;
+}
