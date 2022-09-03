@@ -1,0 +1,35 @@
+function sumPrimes(num) {
+  let sum = 0;
+  let arr = [];
+  let firstNum = 1;
+
+  if (num == 1) {
+    sum++;
+    return sum;
+  } else if (num == 2) {
+    sum = sum + 1;
+    return sum;
+  } else {
+    sum = 2;
+    while (firstNum <= num) {
+      arr.push(firstNum);
+      firstNum++;
+    }
+  
+    for (let i = 2; i < arr.length; i++) {
+      let otherNumDiv = true;
+      for (let j = 1; j < i; j++) {
+        if (arr[i] % arr[j] == 0) {
+          otherNumDiv = false;
+        } 
+      }
+      if (otherNumDiv) {
+        sum += arr[i];
+      }
+    }
+    return sum;
+    
+  }
+
+  
+}
