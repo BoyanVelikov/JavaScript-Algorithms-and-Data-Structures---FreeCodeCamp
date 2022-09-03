@@ -1,0 +1,25 @@
+function dropElements(arr, func) {
+
+    let resultArr = [];
+    let lastIndex;
+    let isEmpty = true;
+    for (let each of arr) {
+        if (func(each)) {
+            resultArr.push(each);
+            lastIndex = arr.indexOf(each);
+            isEmpty = false;
+            break;
+        }
+    }
+
+    if (isEmpty) {
+        return resultArr = [];
+    } else if (lastIndex + 1 == arr.length) {
+        return resultArr;
+    } else {
+        for (let i = lastIndex + 1; i < arr.length; i++) {
+            resultArr.push(arr[i]);
+        }
+        return resultArr;
+    }
+}
