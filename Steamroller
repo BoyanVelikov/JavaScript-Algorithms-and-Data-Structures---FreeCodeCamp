@@ -1,0 +1,12 @@
+function steamrollArray(arr) {
+    const resultArr = [];
+
+    for (let i = 0; i < arr.length; i++) {
+        if (Array.isArray(arr[i])) {
+            resultArr.push(...steamrollArray(arr[i]));
+        } else {
+            resultArr.push(arr[i]);
+        }
+    }
+    return resultArr;
+};
