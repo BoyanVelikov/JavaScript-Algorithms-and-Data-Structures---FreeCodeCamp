@@ -1,0 +1,17 @@
+function addTogether() {
+
+    if ([...arguments].length == 1) {
+        let varNum = [...arguments][0];
+        if (typeof varNum == 'number') {
+            return function(num) {
+                if (typeof num == 'number') {
+                    return num + varNum;
+                } else {}
+            };
+        }
+
+    } else if ([...arguments].length == 2 && typeof [...arguments][0] == 'number' && typeof [...arguments][1] == 'number') {
+        return [...arguments][0] + [...arguments][1];
+    }
+
+}
