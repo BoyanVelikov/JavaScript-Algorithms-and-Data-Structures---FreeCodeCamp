@@ -1,0 +1,22 @@
+function rot13(str) {
+
+    let workArr = str.split('');
+    let resultArr = [];
+    let regex = /[A-Z]/g;
+
+    for (let each of workArr) {
+        if (each.match(regex)) {
+            let currentIndex = each.charCodeAt();
+            let nextIndex = currentIndex + 13;
+            if (nextIndex > 90) {
+                nextIndex = 64 + (nextIndex - 90);
+            }
+            resultArr.push(String.fromCharCode(nextIndex));
+        } else {
+            resultArr.push(each);
+        }
+    }
+
+
+    return resultArr.join('');
+}
