@@ -1,0 +1,21 @@
+function palindrome(str) {
+    let modifiedStr = '';
+    let compareArr = [];
+
+    for (let each of str.split('')) {
+        if (each.match(/^[A-Za-z0-9]*$/)) {
+            modifiedStr += each.toLowerCase();
+        }
+    }
+
+    for (let each of modifiedStr.split('')) {
+
+        compareArr.push(each);
+    }
+
+    if (compareArr.reverse().join('') == modifiedStr) {
+        return true;
+    } else {
+        return false;
+    }
+}
