@@ -1,0 +1,123 @@
+function convertToRoman(num) {
+    let result = '';
+
+    if (num % 1000 > 0 || num / 1000 >= 1) {
+        let x = (num - num % 1000) / 1000;
+        for (let i = 0; i < x; i++) {
+            result += 'M';
+        }
+    }
+
+    num = num % 1000;
+
+    if (num % 900 > 0 || num / 900 >= 1) {
+        let x = (num - num % 900) / 900;
+        for (let i = 0; i < x; i++) {
+            result += 'CM';
+        }
+    }
+
+    num = num % 900;
+
+    if (num % 500 > 0 || num / 500 >= 1) {
+        let x = (num - num % 500) / 500;
+        for (let i = 0; i < x; i++) {
+            result += 'D';
+        }
+    }
+
+    num = num % 500;
+
+    if (num % 400 > 0 || num / 400 >= 1) {
+        let x = (num - num % 400) / 400;
+        for (let i = 0; i < x; i++) {
+            result += 'CD';
+        }
+    }
+
+    num = num % 400;
+
+    if (num % 100 > 0 || num / 100 >= 1) {
+        let x = (num - num % 100) / 100;
+        for (let i = 0; i < x; i++) {
+            result += 'C';
+        }
+    }
+
+    num = num % 100;
+
+    if (num % 90 > 0 || num / 90 >= 1) {
+        let x = (num - num % 90) / 90;
+        for (let i = 0; i < x; i++) {
+            result += 'XC';
+        }
+    }
+
+    num = num % 90;
+
+    if (num % 50 > 0 || num / 50 >= 1) {
+        let x = (num - num % 50) / 50;
+        for (let i = 0; i < x; i++) {
+            result += 'L';
+        }
+    }
+
+    num = num % 50;
+
+    if (num % 40 > 0 || num / 40 >= 1) {
+        let x = (num - num % 40) / 40;
+        for (let i = 0; i < x; i++) {
+            result += 'XL';
+        }
+    }
+
+    num = num % 40;
+
+    if (num % 10 > 0 || num / 10 >= 1) {
+        let x = (num - num % 10) / 10;
+        for (let i = 0; i < x; i++) {
+            result += 'X';
+        }
+    }
+
+    num = num % 10;
+
+    if (num % 9 > 0 || num / 9 >= 1) {
+        let x = (num - num % 9) / 9;
+        for (let i = 0; i < x; i++) {
+            result += 'IX';
+        }
+    }
+
+    num = num % 9;
+
+    if (num % 5 > 0 || num / 5 >= 1) {
+        let x = (num - num % 5) / 5;
+        for (let i = 0; i < x; i++) {
+            result += 'V';
+        }
+    }
+
+    num = num % 5;
+
+    if (num % 4 > 0 || num / 4 >= 1) {
+        let x = (num - num % 4) / 4;
+        for (let i = 0; i < x; i++) {
+            result += 'IV';
+        }
+    }
+
+    num = num % 4;
+
+    if (num % 1 > 0 || num / 1 >= 1) {
+        let x = (num - num % 1) / 1;
+        for (let i = 0; i < x; i++) {
+            result += 'I';
+        }
+    }
+
+    num = num % 1;
+
+    return result;
+
+}
